@@ -3,4 +3,13 @@ const withAlias = require('@blunck/next-alias')({
   '@root': __dirname + '/'
 })
 
-module.exports = withAlias()
+module.exports = withAlias({
+  webpack: cfg => {
+    cfg.module.rules.push({
+      test: /\.md$/,
+      loader: 'frontmatter-markdown-loader',
+      options: { mode: ['react-component'] }
+    })
+    return cfg
+  }
+})
