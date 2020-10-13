@@ -22,7 +22,7 @@
   "dependencies": {
     "@blunck/next-alias": "^1.0.0",
     "frontmatter-markdown-loader": "^3.6.0",
-    "next": "^9.5.3",
+    "next": "^9.5.4",
     "postcss-nested": "^4.2.3",
     "postcss-preset-env": "^6.7.0",
     "react": "^16.12.0",
