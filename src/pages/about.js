@@ -1,16 +1,15 @@
-import { attributes } from '~/content/about.md'
-
-const { sections } = attributes
+import content from '~/content/about.yaml'
+const { sections } = content
 
 const About = () => {
   return (
     <div className="flex flex-col md:flex-row">
       <div className="md:w-1/2">
-        {sections.map((section) => (
-          <>
-            <h2 className="font-bold mb-3 text-xl">{section.heading}</h2>
-            <p className="mb-6">{section.body}</p>
-          </>
+        {sections.map(({ heading, body }, i) => (
+          <div key={i}>
+            <h2 className="font-bold mb-3 text-xl">{heading}</h2>
+            <p className="mb-6">{body}</p>
+          </div>
         ))}
       </div>
 

@@ -1,4 +1,3 @@
----
 sections:
   - heading: What is Tailwind?
     body: >-
@@ -6,4 +5,3 @@ sections:
   - heading: What is Next.js?
     body: >-
       Next.js is a minimalistic framework for creating server-rendered React applications.
----

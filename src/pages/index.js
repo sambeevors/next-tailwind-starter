@@ -1,6 +1,5 @@
-import { attributes } from '~/content/home.md'
-
-const { heading } = attributes
+import content from '~/content/home.yaml'
+const { heading } = content
 
 const Home = () => {
   return (

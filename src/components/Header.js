@@ -1,8 +1,18 @@
 import Link from 'next/link'
 import { useState } from 'react'
 
-const Header = () => {
+const useHeaderState = () => {
   const [isOpen, setIsOpen] = useState(false)
+
+  return {
+    isOpen,
+    setIsOpen,
+    toggleIsOpen: () => setIsOpen(!isOpen)
+  }
+}
+
+const Header = () => {
+  const { isOpen, toggleIsOpen } = useHeaderState()
 
   return (
     <header className="bg-purple-500">
@@ -14,8 +24,8 @@ const Header = () => {
         </div>
 
         <button
-          className="block md:hidden border border-white flex items-center px-3 py-2 rounded text-white"
-          onClick={() => setIsOpen(!isOpen)}
+          className="flex md:hidden border border-white items-center px-3 py-2 rounded text-white"
+          onClick={toggleIsOpen}
         >
           <svg
             className="fill-current h-3 w-3"
@@ -48,4 +58,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export { Header as default, useHeaderState }
